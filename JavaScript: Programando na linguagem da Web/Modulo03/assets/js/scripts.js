@@ -62,7 +62,4 @@ for(i = 0; i < pacientes.length; i++){
     imcPaciente.textContent = imcResultadoPaciente; // injeta no HTML o IMC
   }
   
-
-
-
 }
