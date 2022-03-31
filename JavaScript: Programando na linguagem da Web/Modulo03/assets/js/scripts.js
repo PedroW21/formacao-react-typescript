@@ -4,6 +4,7 @@
 
 - .querySelector somente busca um resultado
 - .querySelectorAll retorna um Array!!!
+- .classList retorna todas as classes daquele elemento (possui metodos)
 
 */
 
@@ -45,13 +46,12 @@ for(i = 0; i < pacientes.length; i++){
   if (pesoPaciente > 200 || pesoPaciente <= 0) {
   
     imcPaciente.textContent ="Peso Inválido!";
-    paciente.style.backgroundColor = "lightcoral";
+    paciente.classList.add("paciente-invalido");
   
   } else if (alturaPaciente > 3.0 || alturaPaciente <= 0) {
   
     imcPaciente.textContent ="Altura Inválida!";
-    paciente.style.backgroundColor = "lightcoral";
-
+    paciente.classList.add("paciente-invalido");
   
   } else { // caso sejam validas, realiza o calculo
 
