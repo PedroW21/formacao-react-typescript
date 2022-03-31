@@ -45,11 +45,13 @@ for(i = 0; i < pacientes.length; i++){
   if (pesoPaciente > 200 || pesoPaciente <= 0) {
   
     imcPaciente.textContent ="Peso Inválido!";
-    paciente.style.backgroundColor = "red";
+    paciente.style.backgroundColor = "lightcoral";
   
   } else if (alturaPaciente > 3.0 || alturaPaciente <= 0) {
   
     imcPaciente.textContent ="Altura Inválida!";
+    paciente.style.backgroundColor = "lightcoral";
+
   
   } else { // caso sejam validas, realiza o calculo
 
