@@ -45,6 +45,7 @@ for(i = 0; i < pacientes.length; i++){
   if (pesoPaciente > 200 || pesoPaciente <= 0) {
   
     imcPaciente.textContent ="Peso Inválido!";
+    paciente.style.backgroundColor = "red";
   
   } else if (alturaPaciente > 3.0 || alturaPaciente <= 0) {
   
