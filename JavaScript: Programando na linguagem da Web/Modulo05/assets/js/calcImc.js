@@ -6,10 +6,6 @@
 - .querySelectorAll retorna um Array!!!
 - .classList retorna todas as classes daquele elemento (possui metodos)
 
-- .preventDefault não deixa o botao executar seu comportamento padrao (limpar o formulario (quando não se tem destino os dados) e recarregar a pagina)
-
-*/
-
 /* Troca Titulo */
 
 let title = document.querySelector(".header-title");

@@ -1,3 +1,10 @@
+/* Seção de Comentários especificos
+
+- .preventDefault não deixa o botao executar seu comportamento padrao (limpar o formulario (quando não se tem destino os dados) e recarregar a pagina)
+
+*/
+
+
 /* Adiciona novo paciente */
 
 let botaoAdicionaPaciente = document.querySelector("#adicionar-paciente");
