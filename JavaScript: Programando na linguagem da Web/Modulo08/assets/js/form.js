@@ -15,10 +15,6 @@ botaoAdicionaPaciente.addEventListener("click", (event)=>{
   // Chamando função que extrai os dados do paciente e salva no objeto paciente
 
   let paciente = extraiDadosForm(form);
-
-  // Chama a função que cria a nova tabela paciente
-
-  let pacienteCriado = criaTabelaPaciente(paciente);
  
   let temErro = validaPaciente(paciente);
 
@@ -31,10 +27,7 @@ botaoAdicionaPaciente.addEventListener("click", (event)=>{
   }
 
   // Momento de inserir a tabela criada na tabela de pacientes (no HTML)
-
-  let tabela = document.querySelector("#tabela-pacientes");
-
-  tabela.appendChild(pacienteCriado);
+  adicionaPacienteTabela(paciente);
 
   let ul = document.querySelector("#informa-erros");
 
@@ -117,4 +110,15 @@ function mostreMensagemErro(erros) {
     ul.appendChild(li);
   })
 
+}
+
+function adicionaPacienteTabela(paciente) {
+
+  // Chama a função que cria a nova tabela paciente
+  let pacienteCriado = criaTabelaPaciente(paciente);
+
+  let tabela = document.querySelector("#tabela-pacientes");
+
+  tabela.appendChild(pacienteCriado);
+  
 }
