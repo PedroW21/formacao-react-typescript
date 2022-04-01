@@ -104,7 +104,6 @@ function validaPaciente(paciente) {
   return erros;
 }
 
-
 function mostreMensagemErro(erros) {
   
   let ul = document.querySelector("#informa-erros");
