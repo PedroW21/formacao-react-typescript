@@ -12,7 +12,7 @@ let title = document.querySelector(".header-title");
 title.textContent = "Aparecida Nutricionista";
 
 
-let pacientes = document.querySelectorAll(".paciente");
+let pacientes = document.querySelectorAll(".paciente"); // é um objeto
 
 // Irá passar por todos os pacientes e calcular seus IMCs
 
