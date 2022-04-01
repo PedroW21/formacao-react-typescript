@@ -137,3 +137,13 @@ button[disabled=disabled], button:disabled {
 	opacity: 0;
 	transition: opacity .5s;
 }
+
+#filtro-tabela {
+	margin-bottom: 0.5rem;
+	width: 200px;
+	height: 35px;
+}
+
+.esconde-nome{
+	display: none;
+}
