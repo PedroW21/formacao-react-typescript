@@ -1,0 +1,8 @@
+.paciente-invalido {
+    background-color: lightcoral;
+}
+
+#informa-erros {
+    color: red;
+    font-size: 20px;
+}
