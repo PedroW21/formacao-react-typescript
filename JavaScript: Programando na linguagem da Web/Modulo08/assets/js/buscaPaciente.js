@@ -24,7 +24,6 @@ botaoBuscar.addEventListener("click", () => {
         console.log(xhr.status);
         console.log(xhr.responseText);
 
-
         erroAjax.classList.remove("esconde-nome");
     }
   });
