@@ -4,7 +4,6 @@
 
 */
 
-
 /* Adiciona novo paciente */
 
 let botaoAdicionaPaciente = document.querySelector("#adicionar-paciente");
@@ -28,6 +27,7 @@ botaoAdicionaPaciente.addEventListener("click", (event)=>{
   let pesoTd = document.createElement("td");
   let alturaTd = document.createElement("td");
   let gorduraTd = document.createElement("td");
+  let imcTd = document.createElement("td");
 
   // Insere os valores nos campos criados
 
@@ -35,6 +35,7 @@ botaoAdicionaPaciente.addEventListener("click", (event)=>{
   pesoTd.textContent = peso;
   alturaTd.textContent = altura;
   gorduraTd.textContent = gordura;
+  imcTd.textContent = calculaImc(peso, altura);
 
   // Amarra a tr os td's criados
 
@@ -42,6 +43,7 @@ botaoAdicionaPaciente.addEventListener("click", (event)=>{
   criaPaciente.appendChild(pesoTd);
   criaPaciente.appendChild(alturaTd);
   criaPaciente.appendChild(gorduraTd);
+  criaPaciente.appendChild(imcTd);
 
   // Momento de inserir a tabela criada na tabela de pacientes
 

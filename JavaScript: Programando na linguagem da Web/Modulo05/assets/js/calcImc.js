@@ -30,14 +30,8 @@ for(i = 0; i < pacientes.length; i++){
   
   /* Calcula IMC */
   
-  var imc = (pesoPaciente, alturaPaciente) =>
-    pesoPaciente / (alturaPaciente * alturaPaciente);
-  
-  
-  // Transformando texto em int
-  
-  let pesoPacienteConvertido = parseInt(pesoPaciente);
-  let alturaPacienteContertido = parseFloat(alturaPaciente);
+  var calculaImc = (pesoPaciente, alturaPaciente) =>
+    (pesoPaciente / (alturaPaciente * alturaPaciente)).toFixed(2);
   
   // Verificando se peso e altura é valido
   
@@ -53,11 +47,9 @@ for(i = 0; i < pacientes.length; i++){
   
   } else { // caso sejam validas, realiza o calculo
 
-    let imcResultadoPaciente = imc(pesoPacienteConvertido, alturaPacienteContertido);
+    let imcResultadoPaciente = calculaImc(pesoPaciente, alturaPaciente);
     
-    imcPaciente.textContent = imcResultadoPaciente.toFixed(2); // injeta no HTML o IMC
+    imcPaciente.textContent = imcResultadoPaciente; // injeta no HTML o IMC
   }
   
 }
-
-
