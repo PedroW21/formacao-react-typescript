@@ -4,8 +4,6 @@
 
 */
 
-/* Adiciona novo paciente */
-
 let botaoAdicionaPaciente = document.querySelector("#adicionar-paciente");
 
 botaoAdicionaPaciente.addEventListener("click", (event)=>{
@@ -22,13 +20,27 @@ botaoAdicionaPaciente.addEventListener("click", (event)=>{
 
   let pacienteCriado = criaTabelaPaciente(paciente);
  
-  // Momento de inserir a tabela criada na tabela de pacientes
+  let temErro = validaPaciente(paciente);
+
+  if(temErro.length > 0){ //se tem alguma informação, tem erro
+    
+    mostreMensagemErro(temErro);
+
+    return;
+    
+  }
+
+  // Momento de inserir a tabela criada na tabela de pacientes (no HTML)
 
   let tabela = document.querySelector("#tabela-pacientes");
 
   tabela.appendChild(pacienteCriado);
 
+  let ul = document.querySelector("#informa-erros");
+
   form.reset(); // Limpa o formulario após inserir os dados
+
+  ul.innerHTML = ""; // Após limpar o formulario e adicionar paciente, ele limpara os erros;
 
 }); //pode receber uma função anonima ou nomeada (externa);
 
@@ -75,4 +87,35 @@ function criaPropriedaTabelaPaciente(dado, classe) {
   td.classList.add(classe); // Coloca uma classe a aquele valor
 
   return td;
+}
+
+function validaPaciente(paciente) {
+
+  erros = [];
+
+  if(!validaPeso(paciente.peso)) erros.push("Peso Inválido!");
+ 
+  if(!validaAltura(paciente.altura)) erros.push("Altura Inválida!");
+
+  if(paciente.nome.length== 0) erros.push("Nome em branco! Insira um nome!");
+
+  if(paciente.gordura.length == 0) erros.push("Percentual de gordura inválido! Insiria algum valor")
+  
+  return erros;
+}
+
+
+function mostreMensagemErro(erros) {
+  
+  let ul = document.querySelector("#informa-erros");
+
+  ul.innerHTML = "";
+
+  erros.forEach((erro) => { //recebe o valor da interação atual
+    let li = document.createElement("li");
+    li.textContent = erro;
+
+    ul.appendChild(li);
+  })
+
 }
