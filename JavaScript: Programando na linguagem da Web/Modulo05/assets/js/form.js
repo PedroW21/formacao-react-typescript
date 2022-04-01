@@ -49,7 +49,6 @@ function extraiDadosForm(form){
 
 function criaTabelaPaciente(paciente) {
 
-
    // Cria uma nova tr com suas td's
 
    let criaPaciente = document.createElement("tr");
