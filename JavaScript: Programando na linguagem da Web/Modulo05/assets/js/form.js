@@ -28,6 +28,8 @@ botaoAdicionaPaciente.addEventListener("click", (event)=>{
 
   tabela.appendChild(pacienteCriado);
 
+  form.reset(); // Limpa o formulario após inserir os dados
+
 }); //pode receber uma função anonima ou nomeada (externa);
 
 
@@ -51,20 +53,18 @@ function criaTabelaPaciente(paciente) {
    // Cria uma nova tr com suas td's
 
    let criaPaciente = document.createElement("tr");
-
-   let nomeTd = criaPropriedaTabelaPaciente(paciente.nome, "info-nome");
-   let pesoTd = criaPropriedaTabelaPaciente(paciente.peso, "info-peso");
-   let alturaTd = criaPropriedaTabelaPaciente(paciente.altura, "info-altura");
-   let gorduraTd = criaPropriedaTabelaPaciente(paciente.gordura, "info-gordura");
-   let imcTd = criaPropriedaTabelaPaciente(paciente.imc, "info-imc");
  
    // Amarra a tr os td's criados
  
-   criaPaciente.appendChild(nomeTd);
-   criaPaciente.appendChild(pesoTd);
-   criaPaciente.appendChild(alturaTd);
-   criaPaciente.appendChild(gorduraTd);
-   criaPaciente.appendChild(imcTd);
+   criaPaciente.appendChild(criaPropriedaTabelaPaciente(paciente.nome, "info-nome"));
+
+   criaPaciente.appendChild(criaPropriedaTabelaPaciente(paciente.peso, "info-peso"));
+   
+   criaPaciente.appendChild(criaPropriedaTabelaPaciente(paciente.altura, "info-altura"));
+
+   criaPaciente.appendChild(criaPropriedaTabelaPaciente(paciente.gordura, "info-gordura"));
+
+   criaPaciente.appendChild(criaPropriedaTabelaPaciente(paciente.imc, "info-imc"));
 
   return criaPaciente;
 }
