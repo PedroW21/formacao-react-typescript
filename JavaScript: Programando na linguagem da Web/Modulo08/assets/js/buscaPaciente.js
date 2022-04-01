@@ -9,14 +9,25 @@ botaoBuscar.addEventListener("click", () => {
   xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes");
 
   xhr.addEventListener("load", () => {
-    let resposta = xhr.responseText; // O evento capturara a informação após ser carregada (recebida da requisição GET);
+    let erroAjax = document.querySelector("#erro-ajax");
 
-    let pacientesExternos = JSON.parse(resposta);
+    if (xhr.status == 200) {
+       erroAjax.classList.add("esconde-nome");
 
-    pacientesExternos.forEach((paciente) => {
-      adicionaPacienteTabela(paciente);
-    });
+      let resposta = xhr.responseText; // O evento capturara a informação após ser carregada (recebida da requisição GET);
+      let pacientesExternos = JSON.parse(resposta);
+
+      pacientesExternos.forEach((paciente) => {
+        adicionaPacienteTabela(paciente);
+      });
+    } else {
+        console.log(xhr.status);
+        console.log(xhr.responseText);
+
+
+        erroAjax.classList.remove("esconde-nome");
+    }
   });
 
-  xhr.send();
+  xhr.send(); // de fato envia a requisição configurada acima
 });
