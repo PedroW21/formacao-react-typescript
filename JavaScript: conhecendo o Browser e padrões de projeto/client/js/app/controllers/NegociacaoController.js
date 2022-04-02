@@ -26,8 +26,6 @@ class NegociacaoController {
             this._inputQuantidade.value, 
             this._inputValor.value);
 
-        console.log(negociacao);
-
         // adicionar a negociação em uma lista
     }
 }
