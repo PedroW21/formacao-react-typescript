@@ -20,8 +20,7 @@ class NegociacoesView {
         
         <tbody>
             ${model.negociacoes.map( n => {
-                console.log(n)
-                return `
+                 return `
                     <tr>
 
                     <td>${DateHelper.dataParaTexto(n._data)}</td>
@@ -31,11 +30,19 @@ class NegociacoesView {
 
                     </tr>
                 `
-            }).join("")}
+            }).join('')}
         </tbody>
         
         <tfoot>
-        </tfoot>
+
+        <td colspan="3"></td>
+        
+        <td>
+            ${ model.negociacoes.reduce((total, n) => total + n.volume, 0.0)}
+        </td>
+
+        <tfoot>
+
     </table>
         `
     }
