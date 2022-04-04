@@ -5,7 +5,7 @@ class Botao extends React.Component {
     render () {
         return (
             <button className={style.botao}>
-                Botazinho
+                {this.props.children}
             </button>
         )
     }
