@@ -13,7 +13,13 @@ class Formulario extends React.Component<{
 
   adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
     evento.preventDefault();
-    this.props.setTarefas(tarefasAntigas => [...tarefasAntigas, { ...this.state }])
+    this.props.setTarefas(tarefasAntigas => 
+      [...tarefasAntigas, 
+        { ...this.state, 
+          selecionado: false, 
+          completado: false 
+        }
+      ])
 
     this.setState({
       tarefa: "",
