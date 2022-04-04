@@ -12,12 +12,7 @@ function Lista({ tarefas }: {tarefas: Array<ITarefa>}) {
       <h2>Estudos do dia</h2>
 
       <ul>
-       {tarefas.map((item: JSX.IntrinsicAttributes & { tarefa: string; tempo: string; }, index: React.Key | null | undefined) => (
-         <Item 
-         key={index}
-         {...item}         
-         />
-       ))}
+       
       </ul>
     </aside>
   );
