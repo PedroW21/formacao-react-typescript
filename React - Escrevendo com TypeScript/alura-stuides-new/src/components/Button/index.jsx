@@ -6,10 +6,12 @@ class Button extends React.Component {
     {
         return (
             <>
-            <button className={style.botao}>El boutao</button>
+            <button className={style.botao}>
+                {this.props.children} 
+            </button>
             </>
         )
     }
 }
-
+// tive que arterar o tipo do arquivo para JSX pois o parametro "children" estava dando erro
 export default Button;
