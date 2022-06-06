@@ -1,7 +1,28 @@
 import React from 'react';
 import style from "./Button.module.scss";
 
-class Button extends React.Component {
+interface Props
+{
+    type?: "button" | "submit" | "reset" | undefined,
+    onClick?: () => void,
+    children?: React.ReactNode
+}
+
+function Button({onClick, type, children} : Props)
+{
+    return (
+        <>
+        <button className={style.botao} type={type} onClick={onClick} >
+            {children} 
+        </button>
+        </>
+    )
+}
+
+/*
+Class Component
+
+class Button1 extends React.Component {
     render()
     {
         const {type = "button", onClick} = this.props;
@@ -15,5 +36,7 @@ class Button extends React.Component {
         )
     }
 }
+
 // tive que arterar o tipo do arquivo para JSX pois o parametro "children" estava dando erro
+*/
 export default Button;
